@@ -21,7 +21,7 @@ def _download_sync(url: str, output_path: Path) -> str:
     import yt_dlp
 
     ydl_opts = {
-        "format": "bestvideo[ext=mp4][height<=720]+bestaudio[ext=m4a]/best[ext=mp4][height<=720]/best",
+        "format": "bestvideo[height<=720]+bestaudio/best[height<=720]/best",
         "outtmpl": str(output_path.with_suffix("")),
         "merge_output_format": "mp4",
         "quiet": True,

@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   backend:
     build:
@@ -10,13 +8,18 @@ services:
     volumes:
       - ./backend/uploads:/app/uploads
       - ./backend/keyframes:/app/keyframes
-      - ./backend/visionflow.db:/app/visionflow.db
+      - db_data:/app/db
     environment:
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - UPLOAD_DIR=/app/uploads
       - KEYFRAME_DIR=/app/keyframes
-      - DATABASE_URL=sqlite+aiosqlite:///./visionflow.db
+      - DATABASE_URL=sqlite+aiosqlite:////app/db/visionflow.db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     restart: unless-stopped
 
   frontend:
@@ -28,5 +31,9 @@ services:
     environment:
       - NEXT_PUBLIC_API_URL=http://localhost:8000
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     restart: unless-stopped
+
+volumes:
+  db_data:

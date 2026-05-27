@@ -1,0 +1,8 @@
+.env
+uploads/
+keyframes/
+visionflow.db
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/

@@ -1,6 +1,6 @@
 import uuid
 from datetime import datetime
-from sqlalchemy import String, Integer, Float, DateTime, Text, JSON
+from sqlalchemy import String, Integer, Float, DateTime, Text, JSON, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from database import Base
 
@@ -33,7 +33,7 @@ class TutorialStep(Base):
     __tablename__ = "tutorial_steps"
 
     id: Mapped[str] = mapped_column(String, primary_key=True, default=new_id)
-    tutorial_id: Mapped[str] = mapped_column(String, nullable=False)
+    tutorial_id: Mapped[str] = mapped_column(String, ForeignKey("tutorials.id"), nullable=False)
     step_number: Mapped[int] = mapped_column(Integer)
     title: Mapped[str] = mapped_column(String)
     description: Mapped[str] = mapped_column(Text)

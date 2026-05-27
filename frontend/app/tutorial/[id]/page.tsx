@@ -1,6 +1,6 @@
 'use client'
 
-import { use, useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Sparkles, ArrowLeft, AlertCircle } from 'lucide-react'
@@ -9,8 +9,8 @@ import { TutorialViewer } from '@/components/TutorialViewer'
 import { api } from '@/lib/api'
 import type { Tutorial } from '@/lib/types'
 
-export default function TutorialPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params)
+export default function TutorialPage({ params }: { params: { id: string } }) {
+  const { id } = params
   const router = useRouter()
   const [tutorial, setTutorial] = useState<Tutorial | null>(null)
   const [loading, setLoading] = useState(true)

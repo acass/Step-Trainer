@@ -2,7 +2,7 @@
 
 An AI-powered video-to-tutorial converter. Drop in any video or paste a YouTube URL and VisionFlow automatically generates a structured, step-by-step tutorial complete with keyframe images, transcribed speech, tips, warnings, and difficulty ratings.
 
----
+<img width="674" height="770" alt="Screenshot 2026-05-27 at 6 47 27 PM" src="https://github.com/user-attachments/assets/6297191c-54d8-4436-bf7b-11bffa92c001" />
 
 ## How It Works
 

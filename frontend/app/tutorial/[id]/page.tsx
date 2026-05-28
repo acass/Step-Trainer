@@ -63,11 +63,11 @@ export default function TutorialPage({ params }: { params: { id: string } }) {
   return (
     <div className="min-h-screen bg-surface-950 flex flex-col">
       {/* Nav */}
-      <nav className="border-b border-zinc-800/50 px-6 py-4 shrink-0">
+      <nav className="border-b border-slate-800/50 px-6 py-4 shrink-0">
         <div className="max-w-7xl mx-auto flex items-center gap-4">
           <button
             onClick={() => router.push('/')}
-            className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors text-sm"
+            className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
           >
             <ArrowLeft size={16} />
             New tutorial
@@ -116,7 +116,7 @@ export default function TutorialPage({ params }: { params: { id: string } }) {
             >
               <AlertCircle size={48} className="text-red-400" />
               <h2 className="text-xl font-bold text-white">Processing failed</h2>
-              <p className="text-zinc-400 text-sm">{tutorial.error_message || 'An error occurred during processing'}</p>
+              <p className="text-slate-400 text-sm">{tutorial.error_message || 'An error occurred during processing'}</p>
               <button onClick={() => router.push('/')} className="text-brand-400 hover:underline text-sm">
                 Try again
               </button>

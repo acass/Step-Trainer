@@ -69,18 +69,18 @@ export function ProgressTracker({ tutorialId, onComplete, onError }: ProgressTra
           AI is analyzing your video
         </motion.div>
         <h2 className="text-2xl font-bold text-white mb-2">Generating your tutorial</h2>
-        <p className="text-zinc-400 text-sm">
+        <p className="text-slate-400 text-sm">
           {activeStage?.description || 'Processing...'}
         </p>
       </div>
 
       {/* Overall progress bar */}
       <div className="mb-8">
-        <div className="flex justify-between text-xs text-zinc-400 mb-2">
+        <div className="flex justify-between text-xs text-slate-400 mb-2">
           <span>Overall progress</span>
           <span>{progress}%</span>
         </div>
-        <div className="w-full bg-zinc-800 rounded-full h-2.5">
+        <div className="w-full bg-slate-800 rounded-full h-2.5">
           <motion.div
             className="bg-gradient-to-r from-brand-600 to-brand-400 h-2.5 rounded-full"
             animate={{ width: `${progress}%` }}
@@ -107,7 +107,7 @@ export function ProgressTracker({ tutorialId, onComplete, onError }: ProgressTra
                   ? 'border-brand-500/50 bg-brand-500/10'
                   : isComplete
                   ? 'border-green-500/20 bg-green-500/5'
-                  : 'border-zinc-800 bg-zinc-900/50'
+                  : 'border-slate-800 bg-slate-900/50'
               }`}
             >
               <div className="shrink-0">
@@ -116,11 +116,11 @@ export function ProgressTracker({ tutorialId, onComplete, onError }: ProgressTra
                 ) : isActive ? (
                   <Loader2 size={20} className="text-brand-400 animate-spin" />
                 ) : (
-                  <div className="w-5 h-5 rounded-full border-2 border-zinc-600" />
+                  <div className="w-5 h-5 rounded-full border-2 border-slate-600" />
                 )}
               </div>
               <div className="flex-1 min-w-0">
-                <p className={`text-sm font-medium ${isActive ? 'text-white' : isComplete ? 'text-zinc-300' : 'text-zinc-500'}`}>
+                <p className={`text-sm font-medium ${isActive ? 'text-white' : isComplete ? 'text-slate-300' : 'text-slate-500'}`}>
                   {stage.label}
                 </p>
               </div>

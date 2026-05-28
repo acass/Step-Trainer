@@ -28,7 +28,7 @@ export function StepCard({ step, isActive, onClick, compact = false }: StepCardP
         'group relative border rounded-2xl cursor-pointer transition-all duration-300 overflow-hidden',
         isActive
           ? 'step-active border-brand-500/60 shadow-lg shadow-brand-500/10'
-          : 'border-zinc-800 bg-zinc-900/50 hover:border-zinc-600 hover:bg-zinc-800/50'
+          : 'border-slate-800 bg-slate-900/50 hover:border-slate-600 hover:bg-slate-800/50'
       )}
     >
       {isActive && (
@@ -43,7 +43,7 @@ export function StepCard({ step, isActive, onClick, compact = false }: StepCardP
           {/* Step number badge */}
           <div className={cn(
             'shrink-0 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold transition-colors',
-            isActive ? 'bg-brand-600 text-white' : 'bg-zinc-800 text-zinc-400 group-hover:bg-zinc-700'
+            isActive ? 'bg-brand-600 text-white' : 'bg-slate-800 text-slate-400 group-hover:bg-slate-700'
           )}>
             {step.step_number}
           </div>
@@ -58,7 +58,7 @@ export function StepCard({ step, isActive, onClick, compact = false }: StepCardP
             </h3>
 
             {/* Timestamp */}
-            <div className="flex items-center gap-1.5 text-xs text-zinc-500 mb-3">
+            <div className="flex items-center gap-1.5 text-xs text-slate-500 mb-3">
               <Clock size={11} />
               <span>{formatDuration(step.timestamp_start)}</span>
               {step.timestamp_end > step.timestamp_start && (
@@ -71,14 +71,14 @@ export function StepCard({ step, isActive, onClick, compact = false }: StepCardP
 
             {/* Description */}
             {!compact && (
-              <p className="text-sm text-zinc-400 leading-relaxed mb-4 line-clamp-3">
+              <p className="text-sm text-slate-400 leading-relaxed mb-4 line-clamp-3">
                 {step.description}
               </p>
             )}
 
             {/* Keyframe */}
             {step.keyframe_url && !compact && (
-              <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-4 bg-zinc-800">
+              <div className="relative w-full aspect-video rounded-xl overflow-hidden mb-4 bg-slate-800">
                 <img
                   src={api.getKeyframeUrl(step.keyframe_url)}
                   alt={`Step ${step.step_number} visual`}
@@ -96,7 +96,7 @@ export function StepCard({ step, isActive, onClick, compact = false }: StepCardP
                   </span>
                 )}
                 {step.tools_detected.map((tool) => (
-                  <span key={tool} className="text-xs px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-400 flex items-center gap-1">
+                  <span key={tool} className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-slate-400 flex items-center gap-1">
                     <Wrench size={10} />
                     {tool}
                   </span>

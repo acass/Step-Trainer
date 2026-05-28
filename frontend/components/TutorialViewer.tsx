@@ -54,8 +54,8 @@ export function TutorialViewer({ tutorial }: TutorialViewerProps) {
       <div className="flex items-start justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold text-white leading-tight">{tutorial.title}</h1>
-          <p className="text-zinc-400 text-sm mt-1">{tutorial.description}</p>
-          <div className="flex items-center gap-3 mt-2 text-xs text-zinc-500">
+          <p className="text-slate-400 text-sm mt-1">{tutorial.description}</p>
+          <div className="flex items-center gap-3 mt-2 text-xs text-slate-500">
             <span className="flex items-center gap-1"><Film size={12} /> {formatDuration(tutorial.duration)}</span>
             <span className="flex items-center gap-1"><BookOpen size={12} /> {steps.length} steps</span>
           </div>
@@ -64,13 +64,13 @@ export function TutorialViewer({ tutorial }: TutorialViewerProps) {
       </div>
 
       {/* View toggle */}
-      <div className="flex gap-1 p-1 bg-zinc-800 rounded-xl w-fit">
+      <div className="flex gap-1 p-1 bg-slate-800 rounded-xl w-fit">
         {(['split', 'steps'] as const).map((v) => (
           <button
             key={v}
             onClick={() => setView(v)}
             className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-              view === v ? 'bg-brand-600 text-white' : 'text-zinc-400 hover:text-white'
+              view === v ? 'bg-brand-600 text-white' : 'text-slate-400 hover:text-white'
             }`}
           >
             {v === 'split' ? 'Video + Steps' : 'Steps Only'}
@@ -104,21 +104,21 @@ export function TutorialViewer({ tutorial }: TutorialViewerProps) {
         <div className={`flex flex-col flex-1 min-h-0 ${view === 'split' ? 'lg:w-[45%]' : 'w-full'}`}>
           {/* Navigation controls */}
           <div className="flex items-center justify-between mb-4">
-            <span className="text-sm text-zinc-400 font-medium">
+            <span className="text-sm text-slate-400 font-medium">
               Step {activeStep + 1} of {steps.length}
             </span>
             <div className="flex gap-2">
               <button
                 onClick={() => goToStep(activeStep - 1)}
                 disabled={activeStep === 0}
-                className="p-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 disabled:opacity-30 disabled:cursor-not-allowed text-white transition-colors"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed text-white transition-colors"
               >
                 <ChevronLeft size={18} />
               </button>
               <button
                 onClick={() => goToStep(activeStep + 1)}
                 disabled={activeStep === steps.length - 1}
-                className="p-2 rounded-lg bg-zinc-800 hover:bg-zinc-700 disabled:opacity-30 disabled:cursor-not-allowed text-white transition-colors"
+                className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 disabled:opacity-30 disabled:cursor-not-allowed text-white transition-colors"
               >
                 <ChevronRight size={18} />
               </button>

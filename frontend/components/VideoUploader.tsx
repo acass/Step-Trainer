@@ -73,7 +73,7 @@ export function VideoUploader({ onSuccess }: VideoUploaderProps) {
               'flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-medium transition-all duration-200',
               tab === t
                 ? 'bg-brand-600 text-white shadow-lg shadow-brand-600/20'
-                : 'text-zinc-400 hover:text-white hover:bg-zinc-700/50'
+                : 'text-slate-400 hover:text-white hover:bg-slate-700/50'
             )}
           >
             {t === 'upload' ? <Upload size={16} /> : <Link size={16} />}
@@ -100,8 +100,8 @@ export function VideoUploader({ onSuccess }: VideoUploaderProps) {
                   : uploaded
                   ? 'border-green-500 bg-green-500/5 cursor-default'
                   : uploading
-                  ? 'border-zinc-600 bg-zinc-800/50 cursor-wait'
-                  : 'border-zinc-700 bg-zinc-900/50 hover:border-brand-500/50 hover:bg-brand-500/5'
+                  ? 'border-slate-600 bg-slate-800/50 cursor-wait'
+                  : 'border-slate-700 bg-slate-900/50 hover:border-brand-500/50 hover:bg-brand-500/5'
               )}
             >
               <input {...getInputProps()} />
@@ -114,13 +114,13 @@ export function VideoUploader({ onSuccess }: VideoUploaderProps) {
                 >
                   <CheckCircle2 size={48} className="text-green-400" />
                   <p className="text-lg font-medium text-green-400">Upload complete!</p>
-                  <p className="text-sm text-zinc-400">Starting AI analysis...</p>
+                  <p className="text-sm text-slate-400">Starting AI analysis...</p>
                 </motion.div>
               ) : uploading ? (
                 <div className="flex flex-col items-center gap-4">
                   <Loader2 size={48} className="text-brand-500 animate-spin" />
                   <p className="text-lg font-medium text-white">Uploading...</p>
-                  <div className="w-full max-w-xs bg-zinc-700 rounded-full h-2">
+                  <div className="w-full max-w-xs bg-slate-700 rounded-full h-2">
                     <motion.div
                       className="bg-brand-500 h-2 rounded-full"
                       initial={{ width: 0 }}
@@ -128,31 +128,31 @@ export function VideoUploader({ onSuccess }: VideoUploaderProps) {
                       transition={{ duration: 0.3 }}
                     />
                   </div>
-                  <p className="text-sm text-zinc-400">{uploadProgress}%</p>
+                  <p className="text-sm text-slate-400">{uploadProgress}%</p>
                 </div>
               ) : (
                 <div className="flex flex-col items-center gap-4">
                   <div className={cn(
                     'w-20 h-20 rounded-2xl flex items-center justify-center transition-colors duration-300',
-                    isDragActive ? 'bg-brand-500/20' : 'bg-zinc-800'
+                    isDragActive ? 'bg-brand-500/20' : 'bg-slate-800'
                   )}>
                     {isDragActive ? (
                       <motion.div animate={{ scale: [1, 1.1, 1] }} transition={{ repeat: Infinity, duration: 1 }}>
                         <Film size={40} className="text-brand-400" />
                       </motion.div>
                     ) : (
-                      <Upload size={40} className="text-zinc-400" />
+                      <Upload size={40} className="text-slate-400" />
                     )}
                   </div>
                   <div>
                     <p className="text-lg font-medium text-white mb-1">
                       {isDragActive ? 'Drop your video here' : 'Drag & drop your video'}
                     </p>
-                    <p className="text-sm text-zinc-400">
+                    <p className="text-sm text-slate-400">
                       or <span className="text-brand-400 underline underline-offset-2">browse files</span>
                     </p>
                   </div>
-                  <p className="text-xs text-zinc-500">MP4, MOV, WebM · Up to 2GB</p>
+                  <p className="text-xs text-slate-500">MP4, MOV, WebM · Up to 2GB</p>
                 </div>
               )}
             </div>
@@ -167,14 +167,14 @@ export function VideoUploader({ onSuccess }: VideoUploaderProps) {
           >
             <form onSubmit={handleYouTubeSubmit} className="space-y-4">
               <div className="relative">
-                <Link size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" />
+                <Link size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" />
                 <input
                   type="url"
                   value={youtubeUrl}
                   onChange={(e) => setYoutubeUrl(e.target.value)}
                   placeholder="https://youtube.com/watch?v=..."
                   disabled={uploading || uploaded}
-                  className="w-full pl-11 pr-4 py-4 bg-zinc-900 border border-zinc-700 rounded-xl text-white placeholder-zinc-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors disabled:opacity-50"
+                  className="w-full pl-11 pr-4 py-4 bg-slate-900 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-colors disabled:opacity-50"
                 />
               </div>
               <button

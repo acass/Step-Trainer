@@ -29,7 +29,7 @@ export function Timeline({ steps, duration, currentTime, activeStepIndex, onSeek
   return (
     <div className="w-full py-4">
       {/* Time display */}
-      <div className="flex justify-between text-xs text-zinc-500 mb-2">
+      <div className="flex justify-between text-xs text-slate-500 mb-2">
         <span>{formatDuration(currentTime)}</span>
         <span>{formatDuration(duration)}</span>
       </div>
@@ -38,7 +38,7 @@ export function Timeline({ steps, duration, currentTime, activeStepIndex, onSeek
       <div
         ref={trackRef}
         onClick={handleClick}
-        className="relative w-full h-2 bg-zinc-800 rounded-full cursor-pointer group"
+        className="relative w-full h-2 bg-slate-800 rounded-full cursor-pointer group"
       >
         {/* Progress */}
         <div
@@ -63,7 +63,7 @@ export function Timeline({ steps, duration, currentTime, activeStepIndex, onSeek
                   ? 'bg-brand-400 border-brand-300'
                   : idx < activeStepIndex
                   ? 'bg-brand-700 border-brand-600'
-                  : 'bg-zinc-700 border-zinc-500 group-hover:border-zinc-400'
+                  : 'bg-slate-700 border-slate-500 group-hover:border-slate-400'
               }`} />
             </motion.button>
           )
@@ -83,7 +83,7 @@ export function Timeline({ steps, duration, currentTime, activeStepIndex, onSeek
           return (
             <span
               key={step.id}
-              className="absolute text-xs text-zinc-500 -translate-x-1/2 whitespace-nowrap hidden sm:block"
+              className="absolute text-xs text-slate-500 -translate-x-1/2 whitespace-nowrap hidden sm:block"
               style={{ left: `${pct}%` }}
             >
               {step.step_number}

@@ -23,7 +23,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-surface-950 flex flex-col">
       {/* Nav */}
-      <nav className="border-b border-zinc-800/50 px-6 py-4">
+      <nav className="border-b border-slate-800/50 px-6 py-4">
         <div className="max-w-7xl mx-auto flex items-center gap-2">
           <div className="w-8 h-8 bg-brand-600 rounded-lg flex items-center justify-center">
             <Sparkles size={16} className="text-white" />
@@ -46,11 +46,11 @@ export default function HomePage() {
           </div>
           <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-6">
             Turn any video into a{' '}
-            <span className="bg-gradient-to-r from-brand-400 to-purple-400 bg-clip-text text-transparent">
-              step-by-step guide
+            <span className="bg-gradient-to-r from-brand-400 to-sky-300 bg-clip-text text-transparent">
+              step-by-step training guide
             </span>
           </h1>
-          <p className="text-xl text-zinc-400 leading-relaxed">
+          <p className="text-xl text-slate-400 leading-relaxed">
             Upload a video or paste a YouTube link. VisionFlow AI analyzes the content,
             detects key moments, and generates a structured tutorial — automatically.
           </p>
@@ -76,13 +76,13 @@ export default function HomePage() {
           {features.map((f) => (
             <div
               key={f.label}
-              className="flex flex-col items-center text-center p-6 rounded-2xl border border-zinc-800 bg-zinc-900/30"
+              className="flex flex-col items-center text-center p-6 rounded-2xl border border-slate-800 bg-slate-900/30"
             >
               <div className="w-12 h-12 rounded-xl bg-brand-600/15 flex items-center justify-center mb-3">
                 <f.icon size={22} className="text-brand-400" />
               </div>
               <h3 className="font-semibold text-white text-sm mb-1">{f.label}</h3>
-              <p className="text-xs text-zinc-500 leading-relaxed">{f.description}</p>
+              <p className="text-xs text-slate-500 leading-relaxed">{f.description}</p>
             </div>
           ))}
         </motion.div>

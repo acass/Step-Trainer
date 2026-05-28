@@ -50,7 +50,7 @@ export function ExportMenu({ tutorialId, tutorialTitle }: ExportMenuProps) {
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen((v) => !v)}
-        className="flex items-center gap-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-xl text-sm font-medium text-white transition-colors"
+        className="flex items-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl text-sm font-medium text-white transition-colors"
       >
         {loading ? <Loader2 size={16} className="animate-spin" /> : <Download size={16} />}
         Export
@@ -64,18 +64,18 @@ export function ExportMenu({ tutorialId, tutorialTitle }: ExportMenuProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute right-0 top-full mt-2 w-52 bg-zinc-900 border border-zinc-700 rounded-xl shadow-2xl z-50 overflow-hidden"
+            className="absolute right-0 top-full mt-2 w-52 bg-slate-900 border border-slate-700 rounded-xl shadow-2xl z-50 overflow-hidden"
           >
             {formats.map((fmt) => (
               <button
                 key={fmt.id}
                 onClick={() => handleExport(fmt.id)}
-                className="w-full flex items-center gap-3 px-4 py-3 text-sm text-left hover:bg-zinc-800 transition-colors"
+                className="w-full flex items-center gap-3 px-4 py-3 text-sm text-left hover:bg-slate-800 transition-colors"
               >
-                <span className="text-zinc-400">{fmt.icon}</span>
+                <span className="text-slate-400">{fmt.icon}</span>
                 <div>
                   <div className="font-medium text-white">{fmt.label}</div>
-                  <div className="text-xs text-zinc-500">{fmt.description}</div>
+                  <div className="text-xs text-slate-500">{fmt.description}</div>
                 </div>
               </button>
             ))}
